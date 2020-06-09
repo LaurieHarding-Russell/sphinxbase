@@ -64,8 +64,8 @@
 #include <stdlib.h>
 #include <assert.h>
 
-#include "sphinxbase/case.h"
-#include "sphinxbase/err.h"
+#include "include/sphinxbase/case.h"
+#include "include/sphinxbase/err.h"
 
 
 void

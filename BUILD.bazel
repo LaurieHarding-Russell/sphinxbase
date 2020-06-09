@@ -1,0 +1,71 @@
+config_setting(
+    name = "linux_x86",
+    constraint_values = [
+        "@bazel_tools//platforms:linux",
+        "@bazel_tools//platforms:x86_64",
+    ],
+)
+
+config_setting(
+    name = "osx_x86",
+    constraint_values = [
+        "@bazel_tools//platforms:osx",
+        "@bazel_tools//platforms:x86_64"
+    ],
+)
+
+
+# Sphinx base
+cc_library(
+    name = "sphinxbase",
+    deps = ["bio", "logmath"],
+    includes = ["include"],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "logmath",
+    hdrs = ["include/sphinxbase/logmath.h"],
+    deps = ["common"],
+)
+
+cc_library(
+    name = "bio",
+    srcs = [
+        "src/libsphinxbase/util/bio.c"
+    ],
+    hdrs = [
+        "include/sphinxbase/bio.h",
+        "include/sphinxbase/byteorder.h",
+    ],
+    deps = ["common"],
+)
+
+cc_library(
+    name = "common",
+    srcs = [
+        "src/libsphinxbase/util/ckd_alloc.c",
+        "src/libsphinxbase/util/case.c",
+        "src/libsphinxbase/util/cmd_ln.c",
+        "src/libsphinxbase/util/dtoa.c",
+        "src/libsphinxbase/util/err.c",
+        "src/libsphinxbase/util/filename.c",
+        "src/libsphinxbase/util/glist.c",
+        "src/libsphinxbase/util/hash_table.c",
+        "src/libsphinxbase/util/strfuncs.c",
+    ],
+    hdrs = [
+        "include/sphinx_config.h",
+        "include/sphinxbase/case.h",
+        "include/sphinxbase/ckd_alloc.h",
+        "include/sphinxbase/cmd_ln.h",
+        "include/sphinxbase/err.h",
+        "include/sphinxbase/filename.h",
+        "include/sphinxbase/glist.h",
+        "include/sphinxbase/hash_table.h",
+        "include/sphinxbase/sphinxbase_export.h", 
+        "include/sphinxbase/strfuncs.h",
+        "include/sphinxbase/prim_type.h",
+        "include/config.h", 
+    ]
+)

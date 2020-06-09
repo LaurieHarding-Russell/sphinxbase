@@ -126,8 +126,8 @@
 #include <assert.h>
 #include <stdio.h>
 
-#include <sphinxbase/ckd_alloc.h>
-#include <sphinxbase/prim_type.h>
+#include "include/sphinxbase/ckd_alloc.h"
+#include "include/sphinxbase/prim_type.h"
 
 #ifdef WORDS_BIGENDIAN
 #define IEEE_MC68k

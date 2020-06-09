@@ -4,8 +4,8 @@
  * @author David Huggins-Daines <dhuggins@cs.cmu.edu>
  */
 
-#include "ckd_alloc.h"
-#include "bio.h"
+#include "include/sphinxbase/ckd_alloc.h"
+#include "include/sphinxbase/bio.h"
 #include "test_macros.h"
 
 #include <stdio.h>
@@ -18,7 +18,7 @@ main(int argc, char *argv[])
     size_t nsamps;
     int16 *data;
     
-    data = bio_read_wavfile(TESTDATADIR, "chan3", ".wav", 44, FALSE, &nsamps);
+    data = bio_read_wavfile("./test/regression/", "chan3", ".wav", 44, FALSE, &nsamps);
     TEST_EQUAL(230108, nsamps);
     
     ckd_free(data);

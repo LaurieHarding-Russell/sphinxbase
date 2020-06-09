@@ -62,8 +62,8 @@
 #include <stdarg.h>
 
 /* Win32/WinCE DLL gunk */
-#include <sphinxbase/sphinxbase_export.h>
-#include <sphinxbase/prim_type.h>
+#include "include/sphinxbase/sphinxbase_export.h"
+#include "include/sphinxbase/prim_type.h"
 
 /**
  * @file cmd_ln.h
@@ -196,6 +196,7 @@ typedef struct cmd_ln_s cmd_ln_t;
  * @param strict Whether to fail on duplicate or unknown arguments.
  * @return A cmd_ln_t* containing the results of command line parsing, or NULL on failure.
  */
+
 SPHINXBASE_EXPORT
 cmd_ln_t *cmd_ln_init(cmd_ln_t *inout_cmdln, arg_t const *defn, int32 strict, ...);
 

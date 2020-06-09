@@ -1,0 +1,13 @@
+cc_test(
+    name = "testReadFile",
+    srcs = [
+        "test_readfile.c",
+        "test_macros.h",
+    ],
+    deps = [
+        "//:sphinxbase",
+    ],
+    includes = [
+        "//test/regression:data"
+    ]
+)
