@@ -1,5 +1,7 @@
 bazel-*
 
+.vscode
+
 .DS_Store
 Makefile
 Makefile.in
