@@ -79,25 +79,23 @@ static uint64 read_off(bitarr_address_t address)
 #endif
 }
 
-// FIXME
-// uint64 bitarr_read_int57(bitarr_address_t address, uint8 length, uint64 mask)
-// {
-//     return (read_off(address) >> get_shift(address.offset & 7, length)) & mask;
-// }
+uint64 bitarr_read_int57(bitarr_address_t address, uint8 length, uint64 mask)
+{
+    return (read_off(address) >> get_shift(address.offset & 7, length)) & mask;
+}
 
-// FIXME
-// void bitarr_write_int57(bitarr_address_t address, uint8 length, uint64 value) 
-// {
-// #if defined(__arm) || defined(__arm__)
-//     uint64 value64;
-//     uint8 *base_off = (uint8 *)(address.base) + (address.offset >> 3);
-//     memcpy(&value64, base_off, sizeof(value64));
-//     value64 |= (value << get_shift(address.offset & 7, length));
-//     memcpy(base_off, &value64, sizeof(value64));
-// #else
-//     *(uint64 *)((uint8 *)(address.base) + (address.offset >> 3)) |= (value << get_shift(address.offset & 7, length));
-// #endif
-// }
+void bitarr_write_int57(bitarr_address_t address, uint8 length, uint64 value) 
+{
+#if defined(__arm) || defined(__arm__)
+    uint64 value64;
+    uint8 *base_off = (uint8 *)(address.base) + (address.offset >> 3);
+    memcpy(&value64, base_off, sizeof(value64));
+    value64 |= (value << get_shift(address.offset & 7, length));
+    memcpy(base_off, &value64, sizeof(value64));
+#else
+    *(uint64 *)((uint8 *)(address.base) + (address.offset >> 3)) |= (value << get_shift(address.offset & 7, length));
+#endif
+}
 
 uint32 bitarr_read_int25(bitarr_address_t address, uint8 length, uint32 mask) 
 {

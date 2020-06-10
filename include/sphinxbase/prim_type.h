@@ -123,16 +123,16 @@ typedef unsigned short	uint16;
 typedef unsigned char	uint8;
 typedef float		float32;
 typedef double		float64;
-#if defined(_MSC_VER)
-typedef __int64	         int64;
-typedef unsigned __int64 uint64;
-#elif defined(HAVE_LONG_LONG) && (SIZEOF_LONG_LONG == 8)
+// #if defined(_MSC_VER)
+// typedef __int64	         int64;
+// typedef unsigned __int64 uint64;
+// #elif defined(HAVE_LONG_LONG) && (SIZEOF_LONG_LONG == 8)
 typedef long long	   int64;
 typedef unsigned long long uint64;
-#else /* !HAVE_LONG_LONG && SIZEOF_LONG_LONG == 8 */
-typedef double          int64;
-typedef double          uint64;
-#endif /* !HAVE_LONG_LONG && SIZEOF_LONG_LONG == 8 */
+// #else /* !HAVE_LONG_LONG && SIZEOF_LONG_LONG == 8 */
+// typedef double          int64;
+// typedef double          uint64;
+// #endif /* !HAVE_LONG_LONG && SIZEOF_LONG_LONG == 8 */
 
 #ifndef TRUE
 #define TRUE 1
