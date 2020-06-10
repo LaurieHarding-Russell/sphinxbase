@@ -1,4 +1,76 @@
 cc_test(
+    name = "testBitEncode",
+    srcs = [
+        "test_bit_encode.c",
+        "test_macros.h",
+    ],
+    deps = [
+        "//:sphinxbase",
+    ]
+)
+# FIXME
+cc_test(
+    name = "testBitarr",
+    srcs = [
+        "test_bitarr.c",
+        "test_macros.h",
+    ],
+    deps = [
+        "//:sphinxbase",
+    ]
+)
+
+cc_test(
+    name = "testBuildDirectory",
+    srcs = [
+        "test_build_directory.c",
+        "test_macros.h",
+    ],
+    deps = [
+        "//:sphinxbase",
+    ]
+)
+
+cc_test(
+    name = "testFilename",
+    srcs = [
+        "test_filename.c",
+        "test_macros.h",
+    ],
+    deps = [
+        "//:sphinxbase",
+    ],
+    includes = [
+        ":test_ngram"
+    ]
+)
+
+cc_test(
+    name = "testFopen",
+    srcs = [
+        "test_fopen.c",
+        "test_macros.h",
+    ],
+    deps = [
+        "//:sphinxbase",
+    ],
+    includes = [
+        ":test_ngram"
+    ]
+)
+
+cc_test(
+    name = "testHeap",
+    srcs = [
+        "test_heap.c",
+        "test_macros.h",
+    ],
+    deps = [
+        "//:sphinxbase",
+    ]
+)
+
+cc_test(
     name = "testReadFile",
     srcs = [
         "test_readfile.c",
@@ -10,4 +82,9 @@ cc_test(
     includes = [
         "//test/regression:data"
     ]
+)
+
+filegroup(
+    name = "test_ngram",
+    srcs = glob(["test_ngram/*.*"])
 )

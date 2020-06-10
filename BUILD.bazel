@@ -18,9 +18,37 @@ config_setting(
 # Sphinx base
 cc_library(
     name = "sphinxbase",
-    deps = ["bio", "logmath"],
+    deps = ["bio", "logmath", "heap", "pio", "bitarr"],
     includes = ["include"],
     visibility = ["//visibility:public"],
+)
+# FIXME
+cc_library(
+    name = "bitarr",
+    srcs = [
+        "src/libsphinxbase/util/bitarr.c"
+    ],
+    hdrs = ["include/sphinxbase/bitarr.h"],
+    deps = ["common"],
+
+)
+
+cc_library(
+    name = "pio",
+    srcs = [
+        "src/libsphinxbase/util/pio.c"
+    ],
+    hdrs = ["include/sphinxbase/pio.h"],
+    deps = ["common"],
+
+)
+cc_library(
+    name = "heap",
+    srcs = [
+        "src/libsphinxbase/util/heap.c"
+    ],
+    hdrs = ["include/sphinxbase/heap.h"],
+    deps = ["common"],
 )
 
 cc_library(

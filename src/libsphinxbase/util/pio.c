@@ -60,11 +60,11 @@
 #include <direct.h>
 #endif
 
-#include "sphinxbase/pio.h"
-#include "sphinxbase/filename.h"
-#include "sphinxbase/err.h"
-#include "sphinxbase/strfuncs.h"
-#include "sphinxbase/ckd_alloc.h"
+#include "include/sphinxbase/pio.h"
+#include "include/sphinxbase/filename.h"
+#include "include/sphinxbase/err.h"
+#include "include/sphinxbase/strfuncs.h"
+#include "include/sphinxbase/ckd_alloc.h"
 
 #ifndef EXEEXT
 #define EXEEXT ""

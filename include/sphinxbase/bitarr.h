@@ -40,9 +40,9 @@
 
 #include <string.h>
 
-#include <sphinxbase/prim_type.h>
+#include "include/sphinxbase/prim_type.h"
 /* Win32/WinCE DLL gunk */
-#include <sphinxbase/sphinxbase_export.h>
+#include "include/sphinxbase/sphinxbase_export.h"
 
 /** 
  * @file bitarr.h

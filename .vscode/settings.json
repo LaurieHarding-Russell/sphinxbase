@@ -4,6 +4,12 @@
         "bio.h": "c",
         "test_macros.h": "c",
         "cmd_ln.h": "c",
-        "prim_type.h": "c"
+        "prim_type.h": "c",
+        "heap.h": "c",
+        "filename.h": "c",
+        "string.h": "c",
+        "stdlib.h": "c",
+        "bitarr.h": "c",
+        "config.h": "c"
     }
 }

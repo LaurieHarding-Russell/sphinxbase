@@ -3,11 +3,15 @@
  * @author David Huggins-Daines <dhuggins@cs.cmu.edu>
  */
 
-#include "pio.h"
+
+#include "include/sphinxbase/pio.h"
 #include "test_macros.h"
 
 #include <stdio.h>
 #include <stdlib.h>
+
+// FIXME
+#define LMDIR "test/unit/test_ngram"
 
 int
 main(int argc, char *argv[])

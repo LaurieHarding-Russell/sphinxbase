@@ -4,7 +4,7 @@
  * @author David Huggins-Daines <dhuggins@cs.cmu.edu>
  */
 
-#include "pio.h"
+#include "include/sphinxbase/pio.h"
 #include "test_macros.h"
 
 #include <stdio.h>
