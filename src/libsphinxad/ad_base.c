@@ -52,8 +52,8 @@
 #include <string.h>
 #include <config.h>
 
-#include "prim_type.h"
-#include "ad.h"
+#include "include/sphinxbase/prim_type.h"
+#include "include/sphinxbase/ad.h"
 
 struct ad_rec_s {
     int32 sps;		/**< Samples/sec */

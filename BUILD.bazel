@@ -14,6 +14,42 @@ config_setting(
     ],
 )
 
+config_setting(
+    name = "windows_x86",
+    constraint_values = [
+        "@bazel_tools//platforms:windows",
+        "@bazel_tools//platforms:x86_64"
+    ],
+)
+
+cc_library(
+    name = "libsphinxad",
+    srcs = [
+        "src/libsphinxad/ad_base.c",
+        "src/libsphinxad/ad_openal.c",
+    ] +
+    select({
+      "linux_x86": [
+        "src/libsphinxad/ad_oss.c",
+        "src/libsphinxad/ad_alsa.c",
+        # "src/libsphinxad/ad_pulse.c",
+      ],
+      "osx_x86": [
+
+      ],
+    "windows_x86": [
+        "src/libsphinxad/ad_win32.c",
+      ]
+  }),
+    hdrs = [
+        "include/sphinxbase/ad.h"
+    ],
+    deps = ["sphinxbase"],
+    includes = ["include"],
+    visibility = ["//visibility:public"],
+)
+
+
 
 # Sphinx base
 cc_library(

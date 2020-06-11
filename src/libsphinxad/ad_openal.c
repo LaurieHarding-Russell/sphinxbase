@@ -38,7 +38,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "ad.h"
+#include "include/sphinxbase/ad.h"
 
 #include <al.h>
 #include <alc.h>
