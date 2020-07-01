@@ -41,7 +41,7 @@
 
 #include "sphinxbase/prim_type.h"
 #include "sphinxbase/ckd_alloc.h"
-#include "sphinxbase/fixpoint.h"
+#include "include/sphinxbase/fixpoint.h"
 
 #include "sphinxbase/yin.h"
 

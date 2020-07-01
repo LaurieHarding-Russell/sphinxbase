@@ -40,7 +40,7 @@
 #ifndef FE_INTERNAL_H
 #define FE_INTERNAL_H
 
-#include "sphinxbase/fe.h"
+#include "include/sphinxbase/fe.h"
 
 typedef struct prespch_buf_s prespch_buf_t;
 

@@ -70,10 +70,6 @@ cc_library(
         
       ]
   }),
-    hdrs = [
-        "include/sphinxbase/fe.h",
-        "include/sphinxbase/fixpoint.h"
-    ],
     deps = [
         "sphinxbase",
     ],
@@ -86,13 +82,16 @@ cc_library(
 # Sphinx base
 cc_library(
     name = "sphinxbase",
-    deps = ["bio", 
+    srcs = glob(["src/libsphinxbase/**/*.c"]),
+    hdrs = glob(["src/libsphinxbase/**/*.h", "include/sphinxbase/*.h"]),
+    deps = [
+        "bio", 
         "logmath", 
         "heap", 
         "pio", 
         "bitarr",
     ],
-    includes = ["include"],
+    includes = ["include/sphinxbase", "src/libsphinxbase"],
     visibility = ["//visibility:public"],
 )
 # FIXME

@@ -68,16 +68,16 @@
 #include <stdlib.h>
 #include <string.h>
 
-#if defined(_WIN32) && !defined(__SYMBIAN32__)
-# include <windows.h>
-# ifndef _WIN32_WCE
-#  include <time.h>
-# endif
-#elif defined(HAVE_UNISTD_H) /* I know this, this is Unix... */
+// #if defined(_WIN32) && !defined(__SYMBIAN32__)
+// # include <windows.h>
+// # ifndef _WIN32_WCE
+// #  include <time.h>
+// # endif
+// #elif defined(HAVE_UNISTD_H) /* I know this, this is Unix... */
 # include <unistd.h>
 # include <sys/time.h>
 # include <sys/resource.h>
-#endif
+// #endif
 
 #ifdef _MSC_VER
 #pragma warning (disable: 4996)
