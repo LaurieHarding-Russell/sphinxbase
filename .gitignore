@@ -22,7 +22,6 @@ config.sub
 configure
 depcomp
 doc/doxyfile
-include/config.h
 include/config.h.in
 include/sphinx_config.h
 include/stamp-h1
