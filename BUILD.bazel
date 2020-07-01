@@ -25,13 +25,13 @@ config_setting(
 cc_library(
     name = "libsphinxad",
     srcs = [
-        "src/libsphinxad/ad_base.c",
+        # "src/libsphinxad/ad_base.c",
         "src/libsphinxad/ad_openal.c",
     ] +
     select({
       "linux_x86": [
-        "src/libsphinxad/ad_oss.c",
-        "src/libsphinxad/ad_alsa.c",
+        # "src/libsphinxad/ad_oss.c",
+        # "src/libsphinxad/ad_alsa.c",
         # "src/libsphinxad/ad_pulse.c",
       ],
       "osx_x86": [
@@ -44,7 +44,10 @@ cc_library(
     hdrs = [
         "include/sphinxbase/ad.h"
     ],
-    deps = ["sphinxbase"],
+    deps = [
+        "sphinxbase", 
+        "@openal-soft//:al",
+    ],
     includes = ["include"],
     visibility = ["//visibility:public"],
 )
@@ -54,7 +57,12 @@ cc_library(
 # Sphinx base
 cc_library(
     name = "sphinxbase",
-    deps = ["bio", "logmath", "heap", "pio", "bitarr"],
+    deps = ["bio", 
+        "logmath", 
+        "heap", 
+        "pio", 
+        "bitarr",
+    ],
     includes = ["include"],
     visibility = ["//visibility:public"],
 )
@@ -131,5 +139,6 @@ cc_library(
         "include/sphinxbase/strfuncs.h",
         "include/sphinxbase/prim_type.h",
         "include/config.h", 
-    ]
+    ],
+    includes = ["include/sphinxbase"]
 )

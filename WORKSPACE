@@ -1,8 +1,10 @@
 workspace(name = "base_sphinx")
 
-# FIXME, should I just get this from flite? Or sperate it into its own library? Or come up with a better way of loading deps?
-load('@base_sphinx//toolchain:load_sound_linux_dep.bzl', 'loadLinux_X86_64bit')
-load('@base_sphinx//toolchain:load_sound_linux_dep.bzl', 'alsa_X86_64bit')
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-loadLinux_X86_64bit()
-alsa_X86_64bit()
+http_archive(
+    name = "openal-soft",
+    urls = ["https://github.com/LaurieHarding-Russell/openal-soft/archive/1f3bb5d0572bc6333d70473f6bd95242de41050e.zip"],
+    strip_prefix = "openal-soft-1f3bb5d0572bc6333d70473f6bd95242de41050e",
+    sha256 = "ac1867191f36508172a6d6157036cd73bb456f19234f38f972e83341412a7383"
+)

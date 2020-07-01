@@ -40,8 +40,8 @@
 
 #include "include/sphinxbase/ad.h"
 
-#include <al.h>
-#include <alc.h>
+#include "AL/al.h"
+#include "AL/alc.h"
 
 struct ad_rec_s {
     ALCdevice * device;
