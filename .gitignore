@@ -23,7 +23,6 @@ configure
 depcomp
 doc/doxyfile
 include/config.h.in
-include/sphinx_config.h
 include/stamp-h1
 include/stamp-h2
 install-sh
