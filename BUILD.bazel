@@ -52,6 +52,35 @@ cc_library(
     visibility = ["//visibility:public"],
 )
 
+cc_library(
+    name = "sphinx_fe",
+    srcs = [
+        "src/sphinx_fe/sphinx_fe.c",
+        "src/sphinx_fe/cmd_ln_defn.h",
+        "src/sphinx_fe/sphinx_wave2feat.h",
+    ] +
+    select({
+      "linux_x86": [
+
+      ],
+      "osx_x86": [
+
+      ],
+    "windows_x86": [
+        
+      ]
+  }),
+    hdrs = [
+        "include/sphinxbase/fe.h",
+        "include/sphinxbase/fixpoint.h"
+    ],
+    deps = [
+        "sphinxbase",
+    ],
+    includes = ["include"],
+    visibility = ["//visibility:public"],
+)
+
 
 
 # Sphinx base
