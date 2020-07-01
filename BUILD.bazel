@@ -140,5 +140,5 @@ cc_library(
         "include/sphinxbase/prim_type.h",
         "include/config.h", 
     ],
-    includes = ["include/sphinxbase"]
+    includes = ["include/sphinxbase", "include"]
 )
